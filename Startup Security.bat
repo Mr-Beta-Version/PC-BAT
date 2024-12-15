@@ -18,7 +18,7 @@ if errorlevel 1 (
 :: Get the user's input for age in minutes
 set /p age="Enter your age: "
 
-:: Check if the age in minutes matches the current time in minutes
+:: Check if the age in minutes matches the current time with minutes
 if "%age%"=="%minute%" (
     echo WELCOME BOSS
     pause
