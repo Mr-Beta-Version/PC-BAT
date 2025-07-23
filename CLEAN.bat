@@ -1,4 +1,12 @@
 @echo off
+title System Cleaner by Muhammad Walid
+
+:: Credit
+echo -----------------------------------------
+echo        System Cleaner Script
+echo     Created by: Muhammad Walid
+echo -----------------------------------------
+echo.
 echo Cleaning system junk files...
 timeout /t 2 >nul
 
@@ -36,6 +44,10 @@ echo Cleaning UWP app data...
 del /f /s /q "%LocalAppData%\Packages\*"
 
 echo.
-echo ✅ Cleanup Complete!
+echo Cleanup Complete!
+echo.
+echo -----------------------------------------
+echo     Cleaned by Muhammad Walid 
+echo -----------------------------------------
 pause
 exit
