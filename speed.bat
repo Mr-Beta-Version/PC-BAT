@@ -1,8 +1,9 @@
 @echo off
-title Windows Speed Booster
+title Windows Speed Booster by Muhammad Walid
 color 0A
 echo ============================================================
 echo            Windows Speed Booster - Optimizing Performance  
+echo                   Created by: Muhammad Walid               
 echo ============================================================
 echo.
 
@@ -52,11 +53,14 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Mem
 
 :: 8. Restart Explorer to Apply Changes
 echo [INFO] Restarting Windows Explorer...
-taskkill /f /im explorer.exe
+taskkill /f /im explorer.exe >nul 2>&1
 start explorer.exe
 
+echo.
 echo ============================================================
-echo [OK] Optimization complete! Restart is recommended.
+echo [OK] Optimization complete!
+echo Recommended: Restart your PC for full effect.
+echo Script Author: Muhammad Walid
 echo ============================================================
 pause
 exit
