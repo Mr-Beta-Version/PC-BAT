@@ -1,16 +1,41 @@
 @echo off
-echo Cleaning Temp and Prefetch files...
+echo Cleaning system junk files...
 timeout /t 2 >nul
 
-:: Delete Temp folder files
-echo Deleting Temp folder files...
-del /q /f /s %temp%\*
-rmdir /q /s %temp%
+:: Temp folders
+echo Deleting %temp%...
+del /f /s /q "%temp%\*"
+rmdir /s /q "%temp%"
 
-:: Delete Prefetch folder files
-echo Deleting Prefetch folder files...
-del /q /f /s C:\Windows\Prefetch\*
-echo All files deleted from Temp and Prefetch folders.
+echo Deleting C:\Windows\Temp...
+del /f /s /q "C:\Windows\Temp\*"
+rmdir /s /q "C:\Windows\Temp"
 
+:: Prefetch folder
+echo Deleting Prefetch files...
+del /f /s /q "C:\Windows\Prefetch\*"
+
+:: SoftwareDistribution (Windows Update leftovers)
+echo Cleaning Windows Update leftovers...
+del /f /s /q "%SystemRoot%\SoftwareDistribution\Download\*"
+
+:: INetCache
+echo Cleaning browser cache...
+del /f /s /q "%LocalAppData%\Microsoft\Windows\INetCache\*"
+
+:: Windows Error Reporting
+echo Cleaning error logs...
+del /f /s /q "%LocalAppData%\Microsoft\Windows\WER\*"
+
+:: CrashDumps
+echo Cleaning crash dumps...
+del /f /s /q "%LocalAppData%\CrashDumps\*"
+
+:: UWP App Cache (optional)
+echo Cleaning UWP app data...
+del /f /s /q "%LocalAppData%\Packages\*"
+
+echo.
+echo ✅ Cleanup Complete!
 pause
 exit
